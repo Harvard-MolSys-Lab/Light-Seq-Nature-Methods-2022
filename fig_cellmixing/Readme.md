@@ -1,3 +1,4 @@
+To run the scripts to generate the images used in the paper:  
 I recommend using Conda to manage your python environments.  
 
 Most of the scripts used to generate the figures are Jupyter notebooks.  
