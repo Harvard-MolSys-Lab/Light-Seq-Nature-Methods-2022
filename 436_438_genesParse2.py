@@ -22,7 +22,6 @@ PATH_NUMBERS = "results_cellmixing_numbers/"
 BAMFILES = sorted(glob.glob('%s*_dedup.bam' %PATH_BAMFILES))
 DICTIONARY = "genes_dict_combined/genesDict_types_lengths_combined.csv"
 
-
 B1 = "GTTAGG"
 B2 = "TATGGA"
 
@@ -90,18 +89,6 @@ class Parser(object):
 		
 		return df
 
-#Load geneID dictionary
-def loadGeneDictionary(DICTIONARY):
-	#Slightly faster than using pandas
-	geneId_dict = {}
-	with open(DICTIONARY, mode='r') as f:
-		reader = csv.reader(f)
-		for rows in reader:
-			geneId_dict.update({rows[0]:rows[1]})
-	
-	print("Loading only the GeneID's from " + DICTIONARY + "\n")
-	return geneId_dict
-
 #Find first instance of mChr1
 def indexHumanMouse(samfile):
 	temp_index = []
@@ -131,7 +118,6 @@ def parseReads(gindex_human, gindex_mouse, samfile):
 	return HUMAN_READS, MOUSE_READS
 
 def main():
-	geneId_dict = loadGeneDictionary(DICTIONARY)
 
 	for bamfile in BAMFILES:
 
