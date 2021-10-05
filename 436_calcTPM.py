@@ -111,7 +111,7 @@ def main():
     human_436_tpm.to_csv(PATH_RESULTS + "Human_436_meanTPM.csv")
 
     mouse_436_tpm = calcMeanTPM(mouse_436_tpm)
-    human_436_tpm.to_csv(PATH_RESULTS + "Mouse_436_meanTPM.csv")
+    mouse_436_tpm.to_csv(PATH_RESULTS + "Mouse_436_meanTPM.csv")
 
 if __name__ == '__main__':
     main()
