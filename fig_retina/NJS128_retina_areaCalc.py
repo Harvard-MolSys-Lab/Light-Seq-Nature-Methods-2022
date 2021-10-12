@@ -36,7 +36,7 @@ wells = parseWells(ROI)
 roi_area = calcArea(ROI)
 
 #save items
-df = pd.DataFrame(index=["area1","area2","area3"],columns=wells)
+df = pd.DataFrame(index=["ONL","BP","RGC"],columns=wells)
 df["A3"] = roi_area[0:3]
 df["B2"] = roi_area[3:6]
 df["B3"] = roi_area[6:9]
