@@ -7,7 +7,7 @@ BAMFILES      = sorted(glob.glob('%s*.bam' %PATH_BAMFILES))
 PATH_OUTFILE  = "436_438_outFiles_deduped/"
 #UMI dedup options
 OUTPUT_STATS  = False
-CLEAR_PREV = True
+CLEAR_PREV = False
 
 def getFileNamesAll(files):
 	filenames=[]
