@@ -44,7 +44,7 @@ class TPM:
         if "ENSMUSG" in self.data["gene_id"][0]:
             self.species = "_mouse"
     
-    "Reads per kilobase"
+    #Reads per kilobase
     def RPK(self):
         self.data["RPK"]=0
         rpk = self.data["gene_count"] / (self.data["gene_length"]/1000)
