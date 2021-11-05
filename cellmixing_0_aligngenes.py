@@ -3,21 +3,14 @@ import glob
 
 PATH_BAMFILES = "outFiles_genome_alignPerGene/"
 FILE_GTF      = "/Users/ninning/o2Download/STAR_mergedIndex/gencode.v35andvM25.annotation.gff3"
-BAMFILES      = sorted(glob.glob('%s*.bam' %PATH_BAMFILES))
+BAMFILES      = sorted(glob.glob('%s*sortedByCoord.out.bam' %PATH_BAMFILES))
 PATH_OUTFILE  = "436_438_outFiles_deduped/"
 #UMI dedup options
 OUTPUT_STATS  = False
-CLEAR_PREV = False
 
 def getFileNamesAll(files):
-	filenames=[]
-	for idx,_ in enumerate(files):
-		if '.bam' in files[idx]:
-			filenames.append(files[idx].split('/')[-1].split('.bam')[0])
-		else:
-			print('At least one file is not .bam')
-			break
-	return filenames
+    filenames = [file.split('/')[-1].split('.bam')[0] for file in files]
+    print (filenames)
 
 def getFileName(bamfile):
 	filename = (bamfile.split('/')[-1].split('.bam')[0])
@@ -31,8 +24,6 @@ def featureCounts(bamfile):
 			  bamfile))
 
 def sortIndex(bamfile):
-	# if '.sam' in files:
-	#     os.system('samtools view -S -b %s>%s' %(files, PATH_BAMFILES))
 	fcountFile = bamfile + '.featureCounts.bam'
 	filename = getFileName(bamfile)
 
@@ -64,30 +55,10 @@ def umiDedup(bamfile):
 		print('\n' + 'Running: ' + umistr + '\n')
 		os.system(umistr)  
 
-#Clear out the created bam files but not the original one
-def clearPrev():
-	prev_sort  = glob.glob('%s*_sorted.bam' %PATH_BAMFILES)
-	prev_bai   = glob.glob('%s*_sorted.bam.bai' %PATH_BAMFILES)
-	prev_dedup = glob.glob('%s*_dedup.bam' %PATH_BAMFILES)
-	prev_feat  = glob.glob('%s*featureCounts.bam' %PATH_BAMFILES)
-
-	for file in prev_sort:
-		os.remove(file)
-	for file in prev_bai:
-		os.remove(file)
-	for file in prev_dedup:
-		os.remove(file)
-	for file in prev_feat:
-		os.remove(file)
-
 def main():
-
-	if CLEAR_PREV:
-		clearPrev()
 
 	print('Getting file names: ')
 	FILE_NAMES = getFileNamesAll(BAMFILES)
-	print(FILE_NAMES)
 
 	#Run analysis one file at a time
 	for bamfile in BAMFILES:
