@@ -9,8 +9,8 @@ PATH_OUTFILE  = "436_438_outFiles_deduped/"
 OUTPUT_STATS  = False
 
 def getFileNamesAll(files):
-    filenames = [file.split('/')[-1].split('.bam')[0] for file in files]
-    print (filenames)
+	filenames = [file.split('/')[-1].split('.bam')[0] for file in files]
+	print (filenames)
 
 def getFileName(bamfile):
 	filename = (bamfile.split('/')[-1].split('.bam')[0])
