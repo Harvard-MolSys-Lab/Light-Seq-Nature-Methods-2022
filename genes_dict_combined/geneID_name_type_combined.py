@@ -1,7 +1,7 @@
 import csv
 import re
 
-GFF_FILE = "/Users/ninning/o2Download/STAR_mergedIndex/gencode.v35andvM25.annotation.gff3"
+GFF_FILE = "gencode.v38andvM27.annotation.gff3"
 
 #save gene_types
 genes_types={}
