@@ -2,7 +2,7 @@ import os
 import glob
 
 PATH_BAMFILES = "outFiles_genome_alignPerGene/"
-FILE_GTF      = "/Users/ninning/o2Download/STAR_mergedIndex/gencode.v35andvM25.annotation.gff3"
+FILE_GTF      = "/Users/ninning/o2Download/STAR_mergedIndex/gencode.v38andvM27.annotation.gff3"
 BAMFILES      = sorted(glob.glob('%s*sortedByCoord.out.bam' % PATH_BAMFILES))
 PATH_OUTFILE  = "436_438_outFiles_deduped/"
 
