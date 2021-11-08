@@ -1,9 +1,10 @@
 #Plot and save the top 200 genes by relative expression level.
+import glob
+import os
+
 import pandas as pd
 import seaborn as sns
 import numpy as np
-import glob
-import os
 
 import matplotlib.pyplot as plt
 
@@ -13,10 +14,12 @@ TOP_GENES = 200
 # is also ~1
 TPM_THRESH = 1 
 
+
 def getFileName(file):
     fname = file.split("/")[-1].split("_")[0:2]
     fname = "_".join(fname)
     return fname
+
 
 #Apply a cutoff to remove zero counts
 def tpmCutoff(df):
@@ -25,6 +28,7 @@ def tpmCutoff(df):
     ]
     
     return newdf
+
 
 #calculate pearson corr of only the three replicates 436 D, E, F
 def corrMatrix(df, **kwargs):
@@ -36,6 +40,7 @@ def corrMatrix(df, **kwargs):
               .corr(method="pearson")
     
     return corr
+
 
 def pairGridPlot(df, **kwargs):
     #slice only columns we want
@@ -49,6 +54,7 @@ def pairGridPlot(df, **kwargs):
     g.map_lower(sns.histplot, cbar=True, bins=50, hue=None)
     g.map_upper(sns.scatterplot, alpha=0.8, s=8)
     g.map_diag(sns.histplot, kde=False, hue=None, bins=50)
+
 
 def main():
 
@@ -81,6 +87,7 @@ def main():
         #Plot and Save scatterplot
         pairGridPlot(tpm_df_1, hue="top_gene")
         plt.savefig(PATH + fname + "_plot.pdf")
+        
 
 if __name__ == '__main__':
     main()
