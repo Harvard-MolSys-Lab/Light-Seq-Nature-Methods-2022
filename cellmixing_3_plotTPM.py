@@ -9,7 +9,9 @@ import matplotlib.pyplot as plt
 
 PATH = "results_cellmixing_geneExpression/"
 TOP_GENES = 200
-TPM_THRESH = 1 #Look at only detected genes for now. Shoulder point for the mean of TPM values is also ~1
+# Look at only detected genes for now. Shoulder point for the mean of TPM values 
+# is also ~1
+TPM_THRESH = 1 
 
 def getFileName(file):
 	fname = file.split("/")[-1].split("_")[0:2]
