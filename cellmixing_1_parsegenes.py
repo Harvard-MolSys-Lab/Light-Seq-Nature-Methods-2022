@@ -157,7 +157,7 @@ def main():
             + MOUSE_MAPS.species 
             + "bc1_AllCounts.csv")
         
-        #MOUSE_MAPS.geneCountAll(MOUSE_MAPS.bc2).to_csv(
+        # MOUSE_MAPS.geneCountAll(MOUSE_MAPS.bc2).to_csv(
         #   PATH_GENES 
         #   + MOUSE_MAPS.fname_short + MOUSE_MAPS.species + "bc2_AllCounts.csv")
 
