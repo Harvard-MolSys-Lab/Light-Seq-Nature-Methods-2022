@@ -69,6 +69,7 @@ class TPM:
         logtpm = np.log2(self.data["TPM"] + 1)
         self.data["log2(TPM+1)"] = logtpm
 
+
 # Take log2TPM values and calc the mean, std of the 3 sequencing replicates
 def calcMeanTPM(df):
     df["meanTPM"] = 0
@@ -77,6 +78,7 @@ def calcMeanTPM(df):
     df["stdTPM"] = df.loc[:, "436D":"436F"].std(axis=1)
     
     return df
+
 
 def main():
     # Create a new dataframe to index the values from the three replicates
@@ -96,11 +98,14 @@ def main():
     for idx,file in enumerate(HUMAN_436):
         human_geneExp = TPM(file)
         human_geneExp.log2TPM()
+
         human_geneExp.data.to_csv(
             PATH_RESULTS 
             + human_geneExp.fname_short 
             + human_geneExp.species 
-            + ".csv")
+            + ".csv"
+            )
+
         print("Saving: " + human_geneExp.fname_short + human_geneExp.species)
         
         human_436_tpm[col_names[idx]] = 0
@@ -109,11 +114,14 @@ def main():
     for idx,file in enumerate(MOUSE_436):
         mouse_geneExp = TPM(file)
         mouse_geneExp.log2TPM()
+
         mouse_geneExp.data.to_csv(
             PATH_RESULTS 
             + mouse_geneExp.fname_short 
             + mouse_geneExp.species 
-            + ".csv")
+            + ".csv"
+            )
+        
         print("Saving: " + mouse_geneExp.fname_short + mouse_geneExp.species)
         
         mouse_436_tpm[col_names[idx]] = 0
@@ -124,6 +132,7 @@ def main():
 
     mouse_436_tpm = calcMeanTPM(mouse_436_tpm)
     mouse_436_tpm.to_csv(PATH_RESULTS + "Mouse_436_meanTPM.csv")
+
 
 if __name__ == '__main__':
     main()
