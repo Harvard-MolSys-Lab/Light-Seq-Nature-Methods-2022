@@ -48,8 +48,9 @@ def umiDedup(bamfile):
     filename = getFileName(bamfile)
 
     if OUTPUT_STATS:
-        umistr = 'umi_tools dedup --per-gene --gene-tag=XT \
-            --assigned-status-tag=XS -I %s --output-stats=%s -S %s --log %s' % (
+        umistr = 'umi_tools dedup --per-gene --gene-tag=XT ' \
+                 '--assigned-status-tag=XS -I %s --output-stats=%s -S %s ' \
+                 '--log %s' % (
                 PATH_BAMFILES + filename + '_sorted.bam', 
                 PATH_OUTFILE  + filename + '_dedupstats', 
                 PATH_OUTFILE  + filename + '_dedup.bam', 
@@ -59,8 +60,8 @@ def umiDedup(bamfile):
         os.system(umistr)
 
     else:
-        umistr = 'umi_tools dedup --per-gene --gene-tag=XT \
-                 --assigned-status-tag=XS -I %s -S %s --log %s' % (
+        umistr = 'umi_tools dedup --per-gene --gene-tag=XT ' \
+                 '--assigned-status-tag=XS -I %s -S %s --log %s' % (
                     PATH_BAMFILES + filename + '_sorted.bam', 
                     PATH_OUTFILE  + filename + '_dedup.bam', 
                     PATH_OUTFILE  + filename + '_deduplog.log')
