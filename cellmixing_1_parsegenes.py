@@ -149,15 +149,13 @@ def main():
             PATH_GENES 
             + HUMAN_MAPS.fname_short 
             + HUMAN_MAPS.species 
-            + "bc2_AllCounts.csv"
-            )
+            + "bc2_AllCounts.csv")
         
         MOUSE_MAPS.geneCountAll(MOUSE_MAPS.bc1).to_csv(
             PATH_GENES 
             + MOUSE_MAPS.fname_short 
             + MOUSE_MAPS.species 
-            + "bc1_AllCounts.csv"
-            )
+            + "bc1_AllCounts.csv")
         
         #MOUSE_MAPS.geneCountAll(MOUSE_MAPS.bc2).to_csv(
         #   PATH_GENES 
