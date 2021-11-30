@@ -53,8 +53,8 @@ def pairGridPlot(df, **kwargs):
     df_plot = df.loc[:, col]
     g = sns.PairGrid(df_plot, hue=kwargs.get("hue"))
     g.map_lower(sns.histplot, cbar=True, bins=50, hue=None)
-    g.map_upper(sns.scatterplot, alpha=0.8, s=8)
-    g.map_diag(sns.histplot, kde=False, hue=None, bins=50)
+    g.map_upper(sns.scatterplot, alpha=0.7, s=25, linewidth=0.1)
+    g.map_diag(sns.histplot, kde=False, hue=None, bins=50, linewidth=0)
 
 
 def main():
