@@ -71,6 +71,19 @@ GFP sequences can then be mapped:
 
     $ python3 AnalyzeGFPSequences.py
 
+Once the sequencing files have been UMI extracted, Mapped, and UMI deduped. You should have several `_Dedup.bam` files in the `outFiles` folder. Several of the subsequent python scripts use the "pysam" package which requires an indexed '.bam' file. For convenience run:
+
+    $ python3 samtoolsindexer.py
+
+in the `outFiles` folder which will run the samtools on all the deduped files.  
+
+Afterwards, the cellmixing numbers used for the publication can be analyzed by running:
+
+    $ python3 cellmixing_1_parsegenes.py
+    $ python3 cellmixing_2_calcTPM.py
+    $ python3 cellmixing_3_plotTPM.py
+    $ python3 cellmixing_4_parseUMIs.py
+    
 ## 5. Map and analyze retina tissue experiment
 
 Once you have the indexed genomes and GFF3 files in the main directory and raw sequencing data files in the inFiles subdirectory, you can also move to the RetinaTissue subdirectory to first extract UMIs:

@@ -4,7 +4,7 @@ import glob
 import pandas as pd
 import pysam
 
-PATH_BAMFILES = "436_438_outFiles_deduped/"
+PATH_BAMFILES = "outFiles/"
 PATH_NUMBERS = "results_cellmixing_numbers/"
 
 HUMAN = sorted(glob.glob('%s*Human_Dedup.bam' % PATH_BAMFILES))
