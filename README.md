@@ -25,11 +25,11 @@ The [STAR aligner (Version 2.7.9a)](https://github.com/alexdobin/STAR/archive/2.
 
 Next, you can set up your conda environment, as most scripts are written in Python. We recommend the following conda environment:
 
-$ conda create --name LSEnv python=3.7.5 pandas matplotlib seaborn PyTables Biopython scikit-image
-$ conda activate SeqNov7
-$ conda install -c bioconda pysam umi_tools subread
-$ conda install -c https://conda.anaconda.org/biocore scikit-bio
-$ source activate LSEnv
+    $ conda create --name LSEnv python=3.7.5 pandas matplotlib seaborn PyTables Biopython scikit-image
+    $ conda activate SeqNov7
+    $ conda install -c bioconda pysam umi_tools subread
+    $ conda install -c https://conda.anaconda.org/biocore scikit-bio
+    $ source activate LSEnv
 
 Note: if samtools is not installed on your conda, you will need to install samtools (e.g. v1.9 or v1.12).
 
@@ -87,10 +87,10 @@ Tables of simulated gene and cell counts per layer for Drop-Seq data can be gene
 
     $ python3 VisualizeResultsDropSeq.py
 
-Next R version 4.1.1 was used to run [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) differential gene expression analysis to generate lists of significantly enriched (adjusted p value < 0.05) genes for each pair of layers for both Light-Seq and simulated Drop-Seq data (under their respective subfolders). These scripts were originally modeled off of R code written for the [Probe-Seq](https://elifesciences.org/articles/51452) method. For Light-Seq, a heatmap is also generated showing the genes for each layer that were significantly enriched compared to both other layers (shown in Figure 1 of the publication).
+Next R version 4.1.1 was used on RStudio to run [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) differential gene expression analysis to generate lists of significantly enriched (adjusted p value < 0.05) genes for each pair of layers for both Light-Seq and simulated Drop-Seq data (under their respective subfolders). These scripts were originally modeled off of R code written for the [Probe-Seq](https://elifesciences.org/articles/51452) method. For Light-Seq, a heatmap is also generated showing the genes for each layer that were significantly enriched compared to both other layers (shown in Figure 1 of the publication).
 
-    $ source("LightSeqDEA.R") 
-    $ source("LightSeqDEA.R") 
+    > source("LightSeqDEA.R") 
+    > source("LightSeqDEA.R") 
 
 Finally, the plots shown in the main and supplementary figures of the publication can be generated:
 
