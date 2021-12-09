@@ -1,3 +1,7 @@
+'''
+Not used, largely superseded by the Dedup.py
+'''
+
 import os
 import glob
 
