@@ -26,12 +26,15 @@ The [STAR aligner (Version 2.7.9a)](https://github.com/alexdobin/STAR/archive/2.
 Next, you can set up your conda environment, as most scripts are written in Python. We recommend the following conda environment:
 
     $ conda create --name LSEnv python=3.7.5 pandas matplotlib seaborn PyTables Biopython scikit-image
-    $ conda activate SeqNov7
+    $ conda activate LSEnv
     $ conda install -c bioconda pysam umi_tools subread
     $ conda install -c https://conda.anaconda.org/biocore scikit-bio
     $ source activate LSEnv
 
-Note: if samtools is not installed on your conda, you will need to install samtools (e.g. v1.9 or v1.12).
+Note: if samtools is not installed on your conda, you will need to install samtools (e.g. v1.9 or v1.12).  
+With the LSEnv active:  
+
+    $ conda install -c bioconda samtools==1.12
 
 ## 3. Set up directory structure
 
