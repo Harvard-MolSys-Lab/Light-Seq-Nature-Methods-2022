@@ -29,12 +29,19 @@ Next, you can set up your conda environment, as most scripts are written in Pyth
     $ conda activate LSEnv
     $ conda install -c bioconda pysam umi_tools subread
     $ conda install -c https://conda.anaconda.org/biocore scikit-bio
-    $ source activate LSEnv
 
 Note: if samtools is not installed on your conda, you will need to install samtools (e.g. v1.9 or v1.12).  
 With the LSEnv active:  
 
     $ conda install -c bioconda samtools==1.12
+
+### (Optional) Set up the jupyter notebook kernel.
+
+The following is optional if you want to set up the LSEnv as a jupyter notebook kernel.  
+With LSEnv active:
+
+    $ conda install ipykernel
+    $ ipython kernel install --user --name=LSEnv
 
 ## 3. Set up directory structure
 
