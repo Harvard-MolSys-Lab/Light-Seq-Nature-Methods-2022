@@ -19,11 +19,11 @@ from utils import setNumbersDF
 # indexed ".bam.bai" file.
 
 
-PATH_BAMFILES = "436_438_outFiles_deduped/"
+PATH_BAMFILES = "outFiles/"
 PATH_GENES = "results_cellmixing_genes/"
 PATH_NUMBERS = "results_cellmixing_numbers/"
 
-BAMFILES = sorted(glob.glob('%s*_dedup.bam' % PATH_BAMFILES))
+BAMFILES = sorted(glob.glob('%s*_Dedup.bam' % PATH_BAMFILES))
 DICTIONARY = "genes_dict_combined/genesDict_types_lengths_combined.csv"
 
 B1 = "GTTAGG"
