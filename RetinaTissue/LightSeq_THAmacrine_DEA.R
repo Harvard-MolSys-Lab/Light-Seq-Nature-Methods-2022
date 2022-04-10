@@ -44,3 +44,6 @@ pheatmap(hm.mat_DGEgenes, cluster_rows=F, cluster_cols=F, scale="row")
 Markers=res[Pos,]
 TopMarkers=subset(Markers,log2FoldChange>3)
 
+# Write out CSV file of differentially expressed genes
+DE_genes.TH.v.noTH <- as.data.frame(res.sorted)
+write.csv(DE_genes.TH.v.noTH, "./ThAmacrine_DEGs.csv")
