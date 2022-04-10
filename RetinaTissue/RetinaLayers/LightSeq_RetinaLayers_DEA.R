@@ -6,7 +6,7 @@ library("dplyr")
 library("ggrepel")
 library("RColorBrewer")
 
-# Load Data 
+# Load count data 
 countData <- read.csv('./RetinaLayers/ReorderedLightSeq.csv', header = TRUE, sep = ",")
 row.names(countData)<-countData[,1]
 countData<-countData[, -c(0:1)]
@@ -14,7 +14,7 @@ countData<-countData[, -c(0:1)]
 # Record sample information
 sample.info<-data.frame(Mouse=c("1","2",  "3", "4", "1", "2", "3", "4", "1", "2", "3", "4"), condition=c(rep("RGC",4), rep("BP",4), rep("ONL",4)), row.names=names(countData))
 
-# Differential Expression analysis
+# Differential expression analysis
 # Create DESeq object, comparing according to "condition", or retinal layer
 DESeq.ds<-DESeqDataSetFromMatrix(countData=countData, colData=sample.info, design = ~ condition)
 
