@@ -71,7 +71,7 @@ GFP sequences can then be mapped:
 
     $ python3 AnalyzeGFPSequences.py
 
-Once the sequencing files have been UMI extracted, Mapped, and UMI deduped. You should have several `_Dedup.bam` files in the `outFiles` folder. Several of the subsequent python scripts use the "pysam" package which requires an indexed '.bam' file. For convenience run:
+Once the sequencing files have been UMI extracted, Mapped, and UMI deduped. You should have several `_Dedup.bam` files in the `outFiles` folder. Several of the subsequent python scripts use functions from the "pysam" package which may require an indexed '.bam' file. For convenience run:
 
     $ python3 samtoolsindexer.py
 
