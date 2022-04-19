@@ -45,9 +45,9 @@ With LSEnv active:
 
 ## 3. Set up directory structure
 
-Indexed genomes should be placed in the main directory (where this README.md document is located), so that they can be accessed by the scripts CellMixing and RetinaTissue subfolder. If they are located elsewhere, you will need to update the scripts to call the correct locations. GFF3 annotation files should also be placed here.
+Indexed genomes should be placed in the main directory (where this README.md document is located), so that they can be accessed by the scripts CellMixing and RetinaCellTypeLayers subfolder. If they are located elsewhere, you will need to update the scripts to call the correct locations. GFF3 annotation files should also be placed here.
 
-Scripts for the cell mixing experiment are under the CellMixing subfolder, and scripts for the retina tissue experiment are under the RetinaTissue subfolder. [Raw imaging data](TODO) should be added into the inFiles subdirectory of the appropriate experiment. Scripts are written to have input fastq.gz files in the `inFiles` subdirectory and write output data to the `outFiles` subdirectory. You should start with an empty `outFiles` subdirectory, into which several output files for the experiment will be written. Next, the experiment-specific UMI extraction, genome mapping, transcript mapping, and analysis scripts can be run. 
+Scripts for the cell mixing experiment are under the CellMixing subfolder, and scripts for the retina tissue experiment are under the RetinaCellTypeLayers subfolder. [Raw imaging data](TODO) should be added into the inFiles subdirectory of the appropriate experiment. Scripts are written to have input fastq.gz files in the `inFiles` subdirectory and write output data to the `outFiles` subdirectory. You should start with an empty `outFiles` subdirectory, into which several output files for the experiment will be written. Next, the experiment-specific UMI extraction, genome mapping, transcript mapping, and analysis scripts can be run. 
 
 ## 4. Map and analyze cell mixing experiment
 
@@ -84,9 +84,9 @@ Afterwards, the cellmixing numbers used for the publication can be analyzed by r
     $ python3 cellmixing_3_plotTPM.py
     $ python3 cellmixing_4_parseUMIs.py
     
-## 5. Map and analyze retina tissue experiment
+## 5. Map and analyze retina cell type layers experiment
 
-Once you have the indexed genomes and GFF3 files in the main directory and raw sequencing data files in the inFiles subdirectory, you can also move to the RetinaTissue subdirectory to first extract UMIs:
+Once you have the indexed genomes and GFF3 files in the main directory and raw sequencing data files in the inFiles subdirectory, you can also move to the RetinaCellTypeLayers subdirectory to first extract UMIs:
 
     $ python3 ExtractThreeBarcodes.py
 
@@ -110,11 +110,65 @@ Tables of simulated gene and cell counts per layer for Drop-Seq data can be gene
 
     $ python3 VisualizeResultsDropSeq.py
 
-Next R version 4.1.1 was used on RStudio to run [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) differential gene expression analysis to generate lists of significantly enriched (adjusted p value < 0.05) genes for each pair of layers for both Light-Seq and simulated Drop-Seq data (under their respective subfolders). These scripts were originally modeled off of R code written for the [Probe-Seq](https://elifesciences.org/articles/51452) method. For Light-Seq, a heatmap is also generated showing the genes for each layer that were significantly enriched compared to both other layers (shown in Figure 1 of the publication).
+Next R version 3.6.1 was used on RStudio to run [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) differential gene expression analysis to generate lists of significantly enriched (adjusted p value < 0.05) genes for each pair of layers for both Light-Seq and simulated Drop-Seq data (under their respective subfolders). These scripts were originally modeled off of R code written for the [Probe-Seq](https://elifesciences.org/articles/51452) method. For Light-Seq, a heatmap is also generated showing the genes for each layer that were significantly enriched compared to both other layers (shown in Figure 1 of the publication). TODO
 
-    > source("LightSeqDEA.R") 
-    > source("LightSeqDEA.R") 
+    > source("LightSeqDEA.R") TODO
+    > source("DropSeqDEA.R")  TODO 
 
-Finally, the plots shown in the main and supplementary figures of the publication can be generated:
+The plots comparing Light-Seq to Drop-Seq data shown in the main and extended data figures of the publication can be generated with:
 
     $ python3 PlotComparisons.py
+
+Sensitivity analysis TODO
+
+    $ TODO matlab
+
+The plots for length histograms, length bias, and RPKM can be generated with:
+
+    $ python3 ExamineLengthDistributions.py
+
+The intron mapping can be run with the following script:
+
+    $ python3 IntronsAnalysis.py
+
+(Note that this will overwrite previous .featurecounts.bam files so should be run LAST in the pipeline.)
+
+The RSeQC package can be used to analyze any of the Dedup'ed BAM files (default exonic or intronic).
+
+## 6. Map and analyze retina amacrine experiment
+
+Move to the RetinaAmacrine subdirectory to first extract UMIs:
+
+    $ python3 ExtractTwoBarcodes.py
+
+Next, UMI extracted reads can be mapped to the mouse genome:
+
+    $ python3 MapToMouseUniqueOnly.py
+
+Only reads that mapped uniquely a single time to the genome were considered. This means that all multi-mapped reads were excluded from further analysis and that the total number of barcoded molecules was likely substantially higher. 
+
+Now, sequences can be mapped to transcripts and deduped by the UMI + gene combo.
+
+    $ python3 Dedup.py
+
+Note that for mouse reads, genes that mapped to the ENSMUSG00000119584.1 and ENSMUSG00000064337.1 transcripts were excluded for further analysis, since they stalled the deduping.
+
+Now, tables of counts per gene for Light-Seq data can be generated:
+
+    $ python3 VisualizeResultsLightSeq.py
+
+Next R version 3.6.1 was used on RStudio to run [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) differential gene expression analysis to generate lists of significantly enriched (adjusted p value < 0.05) genes for each pair of layers for both Light-Seq and simulated Drop-Seq data (under their respective subfolders). These scripts were originally modeled off of R code written for the [Probe-Seq](https://elifesciences.org/articles/51452) method. For Light-Seq, a heatmap is also generated showing the genes for each layer that were significantly enriched compared to both other layers (shown in Figure 1 of the publication). TODO
+
+    > source("LightSeqDEA.R") TODO
+
+The plots for length histograms, length bias, and RPKM can be generated with:
+
+    $ python3 ExamineLengthDistributions.py
+
+The intron mapping can be run with the following script:
+
+    $ python3 IntronsAnalysis.py
+
+(Note that this will overwrite previous .featurecounts.bam files so should be run LAST in the pipeline.)
+
+The RSeQC package can be used to analyze any of the Dedup'ed BAM files (default exonic or intronic).
