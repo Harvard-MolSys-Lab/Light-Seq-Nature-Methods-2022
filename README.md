@@ -112,16 +112,16 @@ Tables of simulated gene and cell counts per layer for Drop-Seq data can be gene
 
 Next R version 3.6.1 was used on RStudio to run [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) differential gene expression analysis to generate lists of significantly enriched (adjusted p value < 0.05) genes for each pair of layers for both Light-Seq and simulated Drop-Seq data (under their respective subfolders). These scripts were originally modeled off of R code written for the [Probe-Seq](https://elifesciences.org/articles/51452) method. For Light-Seq, a heatmap is also generated showing the genes for each layer that were significantly enriched compared to both other layers (shown in Figure 1 of the publication). TODO
 
-    > source("LightSeqDEA.R") TODO
-    > source("DropSeqDEA.R")  TODO 
+    > source("LightSeq_DEA.R")
+    > source("DropSeq_DEA.R") 
 
 The plots comparing Light-Seq to Drop-Seq data shown in the main and extended data figures of the publication can be generated with:
 
     $ python3 PlotComparisons.py
 
-Sensitivity analysis TODO
+Sensitivity analysis to compare Light-Seq and Drop-Seq data to smFISH was performed using MATLAB 2018a by executing the following script (locally) from the RetinaCellTypeLayers directory:
 
-    $ TODO matlab
+    $ SensitivityAnalysis.m
 
 The plots for length histograms, length bias, and RPKM can be generated with:
 
@@ -157,9 +157,9 @@ Now, tables of counts per gene for Light-Seq data can be generated:
 
     $ python3 VisualizeResultsLightSeq.py
 
-Next R version 3.6.1 was used on RStudio to run [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) differential gene expression analysis to generate lists of significantly enriched (adjusted p value < 0.05) genes for each pair of layers for both Light-Seq and simulated Drop-Seq data (under their respective subfolders). These scripts were originally modeled off of R code written for the [Probe-Seq](https://elifesciences.org/articles/51452) method. For Light-Seq, a heatmap is also generated showing the genes for each layer that were significantly enriched compared to both other layers (shown in Figure 1 of the publication). TODO
+Next R version 3.6.1 was used on RStudio to run [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) differential gene expression analysis to generate lists of significantly enriched (adjusted p value < 0.05) genes in the TH+ amacrine cells versus TH- amacrine cells. These scripts were originally modeled off of R code written for the [Probe-Seq](https://elifesciences.org/articles/51452) method. For Light-Seq, a heatmap is also generated showing the genes that were significantly enriched upon comparing TH+ and TH- amacrine cells. 
 
-    > source("LightSeqDEA.R") TODO
+    > source("LightSeq_Amacrine_DEA.R") 
 
 The plots for length histograms, length bias, and RPKM can be generated with:
 
