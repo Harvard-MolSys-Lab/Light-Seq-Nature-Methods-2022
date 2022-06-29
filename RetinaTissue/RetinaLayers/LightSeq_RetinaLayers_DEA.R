@@ -138,9 +138,9 @@ All.DGEgenes <- c(DGEgenes.ONL.RGC, DGEgenes.RGC.BP, DGEgenes.BP.ONL)
 DE_genes.RGC.BP <- as.data.frame(results.RGC.BP.sorted)
 DE_genes.BP.ONL <- as.data.frame(results.BP.ONL.sorted)
 DE_genes.ONL.RGC <- as.data.frame(results.ONL.RGC.sorted)
-write.csv(DE_genes.RGC.BP, "/Users/emmawest/FinalRetinaLightSeq/GitHub_DEA/FinalGitHub/RGCvsBP.csv")
-write.csv(DE_genes.BP.ONL, "/Users/emmawest/FinalRetinaLightSeq/GitHub_DEA/FinalGitHub/BPvsONL.csv")
-write.csv(DE_genes.ONL.RGC, "/Users/emmawest/FinalRetinaLightSeq/GitHub_DEA//FinalGitHub/ONLvsRGC.csv")
+write.csv(DE_genes.RGC.BP, "/LightSeq/RGCvsBP.csv")
+write.csv(DE_genes.BP.ONL, "/LightSeq/BPvsONL.csv")
+write.csv(DE_genes.ONL.RGC, "/LightSeq/ONLvsRGC.csv")
 
 #DE genes that are specific to each population
 ONL.Pos <- intersect(rownames(subset(results.BP.ONL.sorted, log2FoldChange<0&padj<0.05)), rownames(subset(results.ONL.RGC.sorted, log2FoldChange<0&padj<0.05)))
