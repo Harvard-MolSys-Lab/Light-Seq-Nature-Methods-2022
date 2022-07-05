@@ -1,12 +1,10 @@
 Key,Value
-CellProfiler_Version,4.0.7
+CellProfiler_Version,4.2.1
 ChannelType_HumanCyto,Grayscale
-Default_InputFolder,/Users/ninning
-Default_OutputFolder,/Users/ninning
-ImageSet_Zip_Dictionary,b'My1IdW1hbkJDX0Nyb3A+PGZlIFRoZUM9IjAiIFRoZVQ9IjAiWj0iMCIvPjwvUHg+PC9tYU88P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYtOCI/PjxPTUUgeG1sbnM9Imh0dHA6Ly93d3cub3Blbm1pY3Jvc2NvcHkub3JnL1NjaGVtYXMvT01FLzIwMTYtMDYiPjxJbWFnZSBJRD0iSHVtYW5DeXRvIj48UGl4ZWxzIERpbWVuc2lvbk9yZGVyPSJYWUNaVCIgSUQ9IlBpeGVsczpIdW1hbkN5dG8iIFNpemVUPSIxIiBTaXplWD0iMSIgU2l6ZVk9IjEiPjxUaWZmRGF0YSBGaXJzdEM9IjAiIEZpcnN0VD0iMCIgRmlyc3RaPSIwIiBJRkQ9IjAiIFBsYW5lQ291bnQ9IjEiPjxVVUlEIEZpbGVOYW1lPSJmaWxlOi9Vc2Vycy9uaW5uaW5nL0Rlc2t0b3AvTFMtMS9OSlMxMjctQjQtSHVtYW5CQ19Dcm9wPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48T01FIHhtbG5zPSJodHRwOi8vd3d3Lm9wZW5taWNyb3Njb3B5Lm9yZy9TY2hlbWFzL09NRS8yMDE2LTA2Ij48SW1hZ2UgSUQ9Ikh1bWFuQ3l0byI+PFBpeGVscyBEaW1lbnNpb25PcmRlcj0iWFlDWlQiIElEPSJQaXhlbHM6SHVtYW5DeXRvIiBTaXplVD0iMSIgU2l6ZVg9IjEiIFNpemVZPSIxIj48VGlmZkRhdGEgRmlyc3RDPSIwIiBGaXJzdFQ9IjAiIEZpcnN0Wj0iMCIgSUZEPSIwIiBQbGFuZUNvdW50PSIxIj48VVVJRCBGaWxlTmFtZT0iZmlsZTovVXNlcnMvbmlubmluZy9EZXNrdG9wL0xTLTEvTkpTMTI3LUJIdW1hbnJveG1sc2lvbjEuMCJlbmNvaW5GP09NRW5zOi93dy5vaXlnY2htcy9PTUUyLTYiPjxJbWFnZSBJRD0idXRvPjxQaXhlbHMgZGVyVCIgSUh1bWFuQ3l0byIgU2l6ZT0iMSIgU2l6ZVg9IjEiWT0iMSI+PFRpZmZEYXRhIEZpcnN0Qz0iMCIgRmlyc3RUPSIwIiBaPSIwIkQ9InQ9IjFVSUQgRmltZWlsZTplcnNuaW5nL29wU04='
+ImageSet_Zip_Dictionary,b'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48T01FIHhtbG5zPSJodHRwOi8vd3d3Lm9wZW5taWNyb3Njb3B5Lm9yZy9TY2hlbWFzL09NRS8yMDE2LTA2Ij48SW1hZ2UgSUQ9Ikh1bWFuQ3l0byI+PFBpeGVscyBEaW1lbnNpb25PcmRlcj0iWFlDWlQiIElEPSJQaXhlbHM6SHVtYW5DeXRvIiBTaXplVD0iMSIgU2l6ZVg9IjEiIFNpemVZPSIxIj48VGlmZkRhdGEgRmlyc3RDPSIwIiBGaXJzdFQ9IjAiIEZpcnN0Wj0iMCIgSUZEPSIwIiBQbGFuZUNvdW50PSIxIj48VVVJRCBGaWxlTmFtZT0iZmlsZTovVXNlcnMvbmlubmluZy9EZXNrdG9wL3Jlc3VsdHNfY2VsbGFyZWEvSHVtYW5CQ0FyZWEvNDM2SHVtYW4+PGZlIFRoZUM9IjAiIFRoZVQ9IjAiWj0iMCIvPjwvUHg+PC9tYU94bWxzaW9uLjAiZW5jb2luRi0/T01FbnM6L3d3Lm9peWdTaG1zL09NRS02Ij48SW1hZ2UgSUQ9InRvPjxQaXhlbHMgZGVyVCIgSUh1bWFuQ3l0byIgU2l6ZT0iMSIgU2l6ZVg9IjEiWT0iMSI+PFRpZmZEYXRhIEZpcnN0Qz0iMCIgRmlyc3RUPSIwIiBaPSIwIkQ9ImxhdD0iMVVJRCBGaW1laWxlOmVyc25pbmcvZXNvcHVjZWxyZUh1bWFuQkNyZWEvRg=='
 Pipeline_Pipeline,"CellProfiler Pipeline: http://www.cellprofiler.org
 Version:5
-DateRevision:407
+DateRevision:421
 GitHash:
 ModuleCount:9
 HasImagePlaneDetails:False
@@ -59,7 +57,7 @@ Groups:[module_num:4|svn_version:'Unknown'|variable_revision_number:2|show_windo
     grouping metadata count:1
     Metadata category:None
 
-IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_number:14|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_number:15|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the input image:HumanCyto
     Name the primary objects to be identified:IdentifyPrimaryObjects
     Typical diameter of objects, in pixel units (Min,Max):10,100
@@ -75,8 +73,6 @@ IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_num
     Automatically calculate minimum allowed distance between local maxima?:Yes
     Handling of objects if excessive number of objects identified:Continue
     Maximum number of objects:500
-    Display accepted local maxima?:No
-    Select maxima color:Blue
     Use advanced settings?:Yes
     Threshold setting version:12
     Threshold strategy:Global
@@ -110,7 +106,7 @@ MeasureImageAreaOccupied:[module_num:7|svn_version:'Unknown'|variable_revision_n
     Select binary images to measure:MouseMask
     Select object sets to measure:IdentifyPrimaryObjects
 
-SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:15|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:16|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the type of image to save:Mask
     Select the image to save:HumanMask
     Select method for constructing file names:From image filename
@@ -128,6 +124,7 @@ SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:15|show_
     Create subfolders in the output folder?:No
     Base image folder:Elsewhere...|
     How to save the series:T (Time)
+    Save with lossless compression?:No
 
 ExportToSpreadsheet:[module_num:9|svn_version:'Unknown'|variable_revision_number:13|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the column delimiter:Comma ("","")
@@ -137,7 +134,7 @@ ExportToSpreadsheet:[module_num:9|svn_version:'Unknown'|variable_revision_number
     Calculate the per-image mean values for object measurements?:No
     Calculate the per-image median values for object measurements?:No
     Calculate the per-image standard deviation values for object measurements?:No
-    Output file location:Default Input Folder sub-folder|Desktop/LS-1
+    Output file location:Default Input Folder sub-folder|Desktop/results_cellarea/HumanBCArea
     Create a GenePattern GCT file?:No
     Select source of sample row name:Metadata
     Select the image to use as the identifier:None
@@ -153,4 +150,4 @@ ExportToSpreadsheet:[module_num:9|svn_version:'Unknown'|variable_revision_number
     File name:DATA.csv
     Use the object name for the file name?:Yes
 "
-Run_Timestamp,2021-08-16T13:28:59.003332
+Run_Timestamp,2022-07-05T14:53:32.177114

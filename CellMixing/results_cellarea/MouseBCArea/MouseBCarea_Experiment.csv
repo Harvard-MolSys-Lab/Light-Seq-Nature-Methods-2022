@@ -1,12 +1,10 @@
 Key,Value
-CellProfiler_Version,4.0.7
+CellProfiler_Version,4.2.1
 ChannelType_MouseCyto,Grayscale
-Default_InputFolder,/Users/ninning
-Default_OutputFolder,/Users/ninning
-ImageSet_Zip_Dictionary,b'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48T01FIHhtbG5zPSJodHRwOi8vd3d3Lm9wZW5taWNyb3Njb3B5Lm9yZy9TY2hlbWFzL09NRS8yMDE2LTA2Ij48SW1hZ2UgSUQ9Ik1vdXNlQ3l0byI+PFBpeGVscyBEaW1lbnNpb25PcmRlcj0iWFlDWlQiIElEPSJQaXhlbHM6TW91c2VDeXRvIiBTaXplVD0iMSIgU2l6ZVg9IjEiIFNpemVZPSIxIj48VGlmZkRhdGEgRmlyc3RDPSIwIiBGaXJzdFQ9IjAiIEZpcnN0Wj0iMCIgSUZEPSIwIiBQbGFuZUNvdW50PSIxIj48VVVJRCBGaWxlTmFtZT0iZmlsZTovVXNlcnMvbmlubmluZy9EZXNrdG9wL0xTLTEvTkpTMTI3LUE+PGZlIFRoZUM9IjAiIFRoZVQ9IjAiWj0iMCIvPjwvUHg+PC9tYU88P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYtOCI/PjxPTUUgeG1sbnM9Imh0dHA6Ly93d3cub3Blbm1pY3Jvc2NvcHkub3JnL1NjaGVtYXMvT01FLzIwMTYtMDYiPjxJbWFnZSBJRD0iTW91c2VDeXRvIj48UGl4ZWxzIERpbWVuc2lvbk9yZGVyPSJYWUNaVCIgSUQ9IlBpeGVsczpNb3VzZUN5dG8iIFNpemVUPSIxIiBTaXplWD0iMSIgU2l6ZVk9IjEiPjxUaWZmRGF0YSBGaXJzdEM9IjAiIEZpcnN0VD0iMCIgRmlyc3RaPSIwIiBJRkQ9IjAiIFBsYW5lQ291bnQ9IjEiPjxVVUlEIEZpbGVOYW1lPSJmaWxlOi9Vc2Vycy9uaW5uaW5nL0Rlc2t0b3AvTFMtMS9OSlMxMjctQnhtbHNpb24uMCJlbmNvaW5GP09NRW5zOi93dy5vaXlnY2htcy9PTUUyLTYiPjxJbWFnZSBJRD0ic2V0bz48UGl4ZWxzIGRlclQiIElNb3VzZUN5dG8iIFNpemU9IjEiIFNpemVYPSIxIlk9IjEiPjxUaWZmRGF0YSBGaXJzdEM9IjAiIEZpcnN0VD0iMCIgWj0iMCJEPSJlQ291dD0iMVVJRCBGaW1laWxlOmVyc25pbmcvb3BTTg=='
+ImageSet_Zip_Dictionary,b'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48T01FIHhtbG5zPSJodHRwOi8vd3d3Lm9wZW5taWNyb3Njb3B5Lm9yZy9TY2hlbWFzL09NRS8yMDE2LTA2Ij48SW1hZ2UgSUQ9Ik1vdXNlQ3l0byI+PFBpeGVscyBEaW1lbnNpb25PcmRlcj0iWFlDWlQiIElEPSJQaXhlbHM6TW91c2VDeXRvIiBTaXplVD0iMSIgU2l6ZVg9IjEiIFNpemVZPSIxIj48VGlmZkRhdGEgRmlyc3RDPSIwIiBGaXJzdFQ9IjAiIEZpcnN0Wj0iMCIgSUZEPSIwIiBQbGFuZUNvdW50PSIxIj48VVVJRCBGaWxlTmFtZT0iZmlsZTovVXNlcnMvbmlubmluZy9EZXNrdG9wL3Jlc3VsdHNfY2VsbGFyZWEvTW91c2VCQ0FyZWEvNDM2TW91c2U+PGZlIFRoZUM9IjAiIFRoZVQ9IjAiWj0iMCIvPjwvUHg+PC9tYU94bWxzaW9uLjAiZW5jb2luRi0/T01FbnM6L3d3Lm9peWdTaG1zL09NRS02Ij48SW1hZ2UgSUQ9InRvPjxQaXhlbHMgZGVyVCIgSU1vdXNlQ3l0byIgU2l6ZT0iMSIgU2l6ZVg9IjEiWT0iMSI+PFRpZmZEYXRhIEZpcnN0Qz0iMCIgRmlyc3RUPSIwIiBaPSIwIkQ9ImxhZUNvdXQ9IjFVSUQgRmltZWlsZTplcnNuaW5nL2Vzb3B1Y2VscmVNb3VzZUJDcmVhL0Y='
 Pipeline_Pipeline,"CellProfiler Pipeline: http://www.cellprofiler.org
 Version:5
-DateRevision:407
+DateRevision:421
 GitHash:
 ModuleCount:9
 HasImagePlaneDetails:False
@@ -59,7 +57,7 @@ Groups:[module_num:4|svn_version:'Unknown'|variable_revision_number:2|show_windo
     grouping metadata count:1
     Metadata category:None
 
-IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_number:14|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_number:15|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the input image:MouseCyto
     Name the primary objects to be identified:IdentifyPrimaryObjects
     Typical diameter of objects, in pixel units (Min,Max):20,100
@@ -75,8 +73,6 @@ IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_num
     Automatically calculate minimum allowed distance between local maxima?:Yes
     Handling of objects if excessive number of objects identified:Continue
     Maximum number of objects:500
-    Display accepted local maxima?:No
-    Select maxima color:Blue
     Use advanced settings?:Yes
     Threshold setting version:12
     Threshold strategy:Global
@@ -110,12 +106,12 @@ MeasureImageAreaOccupied:[module_num:7|svn_version:'Unknown'|variable_revision_n
     Select binary images to measure:MouseMask
     Select object sets to measure:IdentifyPrimaryObjects
 
-SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:15|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:16|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the type of image to save:Mask
     Select the image to save:MouseMask
     Select method for constructing file names:From image filename
     Select image name for file prefix:MouseCyto
-    Enter file prefix:OrigBlue
+    Enter single file name:OrigBlue
     Number of digits:4
     Append a suffix to the image file name?:Yes
     Text to append to the image name:_mask
@@ -128,16 +124,17 @@ SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:15|show_
     Create subfolders in the output folder?:No
     Base image folder:Elsewhere...|
     How to save the series:T (Time)
+    Save with lossless compression?:No
 
 ExportToSpreadsheet:[module_num:9|svn_version:'Unknown'|variable_revision_number:13|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the column delimiter:Comma ("","")
     Add image metadata columns to your object data file?:No
-    Add image file and folder names to your object data file?:No
+    Add image file and folder names to your object data file?:Yes
     Select the measurements to export:Yes
     Calculate the per-image mean values for object measurements?:No
     Calculate the per-image median values for object measurements?:No
     Calculate the per-image standard deviation values for object measurements?:No
-    Output file location:Default Input Folder sub-folder|Desktop/LS-1
+    Output file location:Default Input Folder sub-folder|Desktop/results_cellarea/MouseBCArea
     Create a GenePattern GCT file?:No
     Select source of sample row name:Metadata
     Select the image to use as the identifier:None
@@ -153,4 +150,4 @@ ExportToSpreadsheet:[module_num:9|svn_version:'Unknown'|variable_revision_number
     File name:DATA.csv
     Use the object name for the file name?:Yes
 "
-Run_Timestamp,2021-08-16T12:50:17.382331
+Run_Timestamp,2022-07-05T15:16:47.808771

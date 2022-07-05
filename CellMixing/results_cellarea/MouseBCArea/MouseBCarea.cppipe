@@ -1,6 +1,6 @@
 CellProfiler Pipeline: http://www.cellprofiler.org
 Version:5
-DateRevision:407
+DateRevision:421
 GitHash:
 ModuleCount:9
 HasImagePlaneDetails:False
@@ -53,7 +53,7 @@ Groups:[module_num:4|svn_version:'Unknown'|variable_revision_number:2|show_windo
     grouping metadata count:1
     Metadata category:None
 
-IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_number:14|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_number:15|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the input image:MouseCyto
     Name the primary objects to be identified:IdentifyPrimaryObjects
     Typical diameter of objects, in pixel units (Min,Max):20,100
@@ -69,8 +69,6 @@ IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_num
     Automatically calculate minimum allowed distance between local maxima?:Yes
     Handling of objects if excessive number of objects identified:Continue
     Maximum number of objects:500
-    Display accepted local maxima?:No
-    Select maxima color:Blue
     Use advanced settings?:Yes
     Threshold setting version:12
     Threshold strategy:Global
@@ -104,12 +102,12 @@ MeasureImageAreaOccupied:[module_num:7|svn_version:'Unknown'|variable_revision_n
     Select binary images to measure:MouseMask
     Select object sets to measure:IdentifyPrimaryObjects
 
-SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:15|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:16|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the type of image to save:Mask
     Select the image to save:MouseMask
     Select method for constructing file names:From image filename
     Select image name for file prefix:MouseCyto
-    Enter file prefix:OrigBlue
+    Enter single file name:OrigBlue
     Number of digits:4
     Append a suffix to the image file name?:Yes
     Text to append to the image name:_mask
@@ -122,16 +120,17 @@ SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:15|show_
     Create subfolders in the output folder?:No
     Base image folder:Elsewhere...|
     How to save the series:T (Time)
+    Save with lossless compression?:No
 
 ExportToSpreadsheet:[module_num:9|svn_version:'Unknown'|variable_revision_number:13|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the column delimiter:Comma (",")
     Add image metadata columns to your object data file?:No
-    Add image file and folder names to your object data file?:No
+    Add image file and folder names to your object data file?:Yes
     Select the measurements to export:Yes
     Calculate the per-image mean values for object measurements?:No
     Calculate the per-image median values for object measurements?:No
     Calculate the per-image standard deviation values for object measurements?:No
-    Output file location:Default Input Folder sub-folder|Desktop/LS-1
+    Output file location:Default Input Folder sub-folder|Desktop/results_cellarea/MouseBCArea
     Create a GenePattern GCT file?:No
     Select source of sample row name:Metadata
     Select the image to use as the identifier:None
