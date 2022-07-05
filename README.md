@@ -47,7 +47,7 @@ With LSEnv active:
 
 Indexed genomes should be placed in the main directory (where this README.md document is located), so that they can be accessed by the scripts CellMixing and RetinaCellTypeLayers subfolder. If they are located elsewhere, you will need to update the scripts to call the correct locations. GFF3 annotation files should also be placed here.
 
-Scripts for the cell mixing experiment are under the CellMixing subfolder, and scripts for the retina tissue experiment are under the RetinaCellTypeLayers subfolder. [Raw imaging data](TODO) should be added into the inFiles subdirectory of the appropriate experiment. Scripts are written to have input fastq.gz files in the `inFiles` subdirectory and write output data to the `outFiles` subdirectory. You should start with an empty `outFiles` subdirectory, into which several output files for the experiment will be written. Next, the experiment-specific UMI extraction, genome mapping, transcript mapping, and analysis scripts can be run. 
+Scripts for the cell mixing experiment are under the CellMixing subfolder, and scripts for the retina tissue experiment are under the RetinaTissue subfolder. [Raw sequencing data](TODO) should be added into the inFiles subdirectory of the appropriate experiment. Scripts are written to have input fastq.gz files in the `inFiles` subdirectory and write output data to the `outFiles` subdirectory. You should start with an empty `outFiles` subdirectory, into which several output files for the experiment will be written. Next, the experiment-specific UMI extraction, genome mapping, transcript mapping, and analysis scripts can be run. 
 
 ## 4. Map and analyze cell mixing experiment
 
@@ -86,7 +86,9 @@ Afterwards, the cellmixing numbers used for the publication can be analyzed by r
     
 ## 5. Map and analyze retina cell type layers experiment
 
-Once you have the indexed genomes and GFF3 files in the main directory and raw sequencing data files in the inFiles subdirectory, you can also move to the RetinaCellTypeLayers subdirectory to first extract UMIs:
+We recommend starting from the merged read files, which are of the format: LS8A_Merged_R1.fastq.gz. These can be placed in the `inFiles` directory. If you want to start from the raw data, please see notes below (Section 7).
+
+Once you have the indexed genomes and GFF3 files in the main directory and input sequencing data files in the `inFiles` subdirectory of `RetinaCellTypeLayers`, you can move to the `RetinaCellTypeLayers` subdirectory to first extract UMIs:
 
     python3 ExtractThreeBarcodes.py
 
@@ -110,16 +112,16 @@ Tables of simulated gene and cell counts per layer for Drop-Seq data can be gene
 
     python3 VisualizeResultsDropSeq.py
 
-Next R version 3.6.1 was used on RStudio to run [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) differential gene expression analysis to generate lists of significantly enriched (adjusted p value < 0.05) genes for each pair of layers for both Light-Seq and simulated Drop-Seq data (under their respective subfolders). These scripts were originally modeled off of R code written for the [Probe-Seq](https://elifesciences.org/articles/51452) method. For Light-Seq, a heatmap is also generated showing the genes for each layer that were significantly enriched compared to both other layers (shown in Figure 4 of the publication).
+Next R version 3.6.1 was used on RStudio to run [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) differential gene expression analysis to generate lists of significantly enriched (adjusted p value < 0.05) genes for each pair of layers for both Light-Seq and simulated Drop-Seq data (under their respective subfolders). These scripts were originally modeled off of R code written for the [Probe-Seq](https://elifesciences.org/articles/51452) method. For Light-Seq, volcano plots and a heatmap is also generated showing the genes for each layer that were significantly enriched compared to both other layers (shown in Figure 4 of the publication).
 
-    > source("LightSeq_DEA.R")
-    > source("DropSeq_DEA.R") 
+    > source("./LightSeq/LightSeq_RetinaLayers_DEA.R")
+    > source("./DropSeq/DropSeq_DEA.R") 
 
 The plots comparing Light-Seq to Drop-Seq data shown in the main and extended data figures of the publication can be generated with:
 
     python3 PlotComparisons.py
 
-Sensitivity analysis to compare Light-Seq and Drop-Seq data to smFISH was performed using MATLAB 2018a by executing the following script (locally) from the RetinaCellTypeLayers directory:
+Sensitivity analysis to compare Light-Seq and Drop-Seq data to smFISH (in Figure 4 and Extended Data Figure 4) was performed using MATLAB 2018a by executing the following script (locally):
 
     SensitivityAnalysis.m
 
@@ -172,3 +174,14 @@ The intron mapping can be run with the following script:
 (Note that this will overwrite previous .featurecounts.bam files so should be run LAST in the pipeline.)
 
 The RSeQC package can be used to analyze any of the Dedup'ed BAM files (default exonic or intronic).
+
+## 7. Parsing raw data from retina cell type layers experiments
+
+Raw data files from the retina cell layers experiment of the format LIB053111_GEN00221663_S1_L001_R1.fastq.bz2 should be placed in the `inFiles/indexedReads` subdirectory of the  RetinaCellTypeLayers` folder. Data files of the form Undetermined_S0_L002_R1.fastq.bz2 should be placed in the `inFiles` subdirectory of the `RetinaCellTypeLayers' folder, and this is where the following scripts can be run. The custom i5 priming did not work well on the NovaSeq 6000, so most of our reads came back as "Undetermined". To recover our replicate-specific sequencing results, we converted the files from bz2 to gz format and then parsed them files based on the i7 index primer only:
+
+    python3 bzip_to_gzip.py
+    python3 indexParser.py
+
+We then concatenated these parsed reads with the successfully parsed reads from the sequencing run:
+
+    python3 catReads.py
