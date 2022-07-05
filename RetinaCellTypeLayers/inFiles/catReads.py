@@ -1,7 +1,7 @@
 import os
 import glob
 
-INDEX_READS_PATH = "../indexedReads/"
+INDEX_READS_PATH = "indexedReads/"
 CONDITIONS = {'S1':'LS8A',
               'S2':'LS8B',
               'S3':'LS8C',
