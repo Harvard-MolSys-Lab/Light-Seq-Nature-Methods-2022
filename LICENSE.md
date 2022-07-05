@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2022 Molecular Systems Lab, Wyss Institute, Harvard University
+Copyright (c) 2022 Molecular Systems Lab, Wyss Institute at Harvard University,
+Harvard Medical School
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
