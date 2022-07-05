@@ -1,0 +1,10 @@
+Reads,Barcode,Mapping,Assignment,RNA type,UMI
+15361597.0,No Barcode,,,,
+8261508.0,Has Barcode,Multimap,,,
+3432801.0,Has Barcode,Unmapped,,,
+129609.0,Has Barcode,Unique Map,Unassigned Ambiguity,,
+10408043.0,Has Barcode,Unique Map,Unassigned No Features,,
+283785.0,Has Barcode,Unique Map,Gene Assigned,RNA Transcripts,UMI
+4447909.0,Has Barcode,Unique Map,Gene Assigned,RNA Transcripts,Duplicate UMIs (Placeholder)
+3812454,Has Barcode,Unique Map,Gene Assigned,Rn18s,
+439975,Has Barcode,Unique Map,Gene Assigned,mt-Rnr1,

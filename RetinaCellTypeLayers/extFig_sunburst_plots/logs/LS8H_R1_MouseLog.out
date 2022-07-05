@@ -1,0 +1,239 @@
+STAR version=2.7.9a
+STAR compilation time,server,dir=2021-11-01T16:44:16-0400 login02.o2.rc.hms.harvard.edu:/n/scratch3/users/j/jyk25/TranscriptStuff/STAR-2.7.9a/source
+##### Command Line:
+../STAR-2.7.9a/source/STAR --runThreadN 12 --quantMode TranscriptomeSAM GeneCounts GeneCounts --genomeDir ../211101_GRChm39_Indexed --readFilesIn outFiles/LS8H_R1_trimmed.fastq.gz --outFileNamePrefix outFiles/LS8H_R1_Mouse --readFilesCommand zcat --outFilterMultimapNmax 1 --outSAMtype BAM SortedByCoordinate
+##### Initial USER parameters from Command Line:
+outFileNamePrefix                 outFiles/LS8H_R1_Mouse
+###### All USER parameters from Command Line:
+runThreadN                    12     ~RE-DEFINED
+quantMode                     TranscriptomeSAM   GeneCounts   GeneCounts        ~RE-DEFINED
+genomeDir                     ../211101_GRChm39_Indexed     ~RE-DEFINED
+readFilesIn                   outFiles/LS8H_R1_trimmed.fastq.gz        ~RE-DEFINED
+outFileNamePrefix             outFiles/LS8H_R1_Mouse     ~RE-DEFINED
+readFilesCommand              zcat        ~RE-DEFINED
+outFilterMultimapNmax         1     ~RE-DEFINED
+outSAMtype                    BAM   SortedByCoordinate        ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runThreadN                        12
+genomeDir                         ../211101_GRChm39_Indexed
+readFilesIn                       outFiles/LS8H_R1_trimmed.fastq.gz   
+readFilesCommand                  zcat   
+outFileNamePrefix                 outFiles/LS8H_R1_Mouse
+outSAMtype                        BAM   SortedByCoordinate   
+outFilterMultimapNmax             1
+quantMode                         TranscriptomeSAM   GeneCounts   GeneCounts   
+
+-------------------------------
+##### Final effective command line:
+../STAR-2.7.9a/source/STAR   --runThreadN 12   --genomeDir ../211101_GRChm39_Indexed   --readFilesIn outFiles/LS8H_R1_trimmed.fastq.gz      --readFilesCommand zcat      --outFileNamePrefix outFiles/LS8H_R1_Mouse   --outSAMtype BAM   SortedByCoordinate      --outFilterMultimapNmax 1   --quantMode TranscriptomeSAM   GeneCounts   GeneCounts   
+----------------------------------------
+
+Number of fastq files for each mate = 1
+
+   Input read files for mate 1 :
+-rw-rw-r-- 1 jyk25 jyk25 552000169 Nov 26 03:14 outFiles/LS8H_R1_trimmed.fastq.gz
+
+   readsCommandsFile:
+exec > "outFiles/LS8H_R1_Mouse_STARtmp/tmp.fifo.read1"
+echo FILE 0
+zcat      "outFiles/LS8H_R1_trimmed.fastq.gz"
+
+ParametersSolo: --soloCellFilterType CellRanger2.2 filtering parameters:  3000 0.99 10
+WARNING: --limitBAMsortRAM=0, will use genome size as RAM limit for BAM sorting
+Finished loading and checking parameters
+Reading genome generation parameters:
+### STAR-2.7.9a/source/STAR   --runMode genomeGenerate      --runThreadN 12   --genomeDir 211101_GRChm39_Indexed   --genomeFastaFiles GRCm39.primary_assembly.genome.fa      --sjdbGTFfile gencode.vM27.annotation.gff3   --sjdbOverhang 249
+### GstrandBit=32
+versionGenome                 2.7.4a     ~RE-DEFINED
+genomeType                    Full     ~RE-DEFINED
+genomeFastaFiles              GRCm39.primary_assembly.genome.fa        ~RE-DEFINED
+genomeSAindexNbases           14     ~RE-DEFINED
+genomeChrBinNbits             18     ~RE-DEFINED
+genomeSAsparseD               1     ~RE-DEFINED
+genomeTransformType           None     ~RE-DEFINED
+genomeTransformVCF            -     ~RE-DEFINED
+sjdbOverhang                  249     ~RE-DEFINED
+sjdbFileChrStartEnd           -        ~RE-DEFINED
+sjdbGTFfile                   gencode.vM27.annotation.gff3     ~RE-DEFINED
+sjdbGTFchrPrefix              -     ~RE-DEFINED
+sjdbGTFfeatureExon            exon     ~RE-DEFINED
+sjdbGTFtagExonParentTranscripttranscript_id     ~RE-DEFINED
+sjdbGTFtagExonParentGene      gene_id     ~RE-DEFINED
+sjdbInsertSave                Basic     ~RE-DEFINED
+genomeFileSizes               2880479907   23070797363        ~RE-DEFINED
+Genome version is compatible with current STAR
+Number of real (reference) chromosomes= 61
+1	mchr1	195154279	0
+2	mchr2	181755017	195297280
+3	mchr3	159745316	377225216
+4	mchr4	156860686	537133056
+5	mchr5	151758149	694157312
+6	mchr6	149588044	845938688
+7	mchr7	144995196	995622912
+8	mchr8	130127694	1140850688
+9	mchr9	124359700	1271136256
+10	mchr10	130530862	1395654656
+11	mchr11	121973369	1526202368
+12	mchr12	120092757	1648361472
+13	mchr13	120883175	1768685568
+14	mchr14	125139656	1889796096
+15	mchr15	104073951	2015100928
+16	mchr16	98008968	2119434240
+17	mchr17	95294699	2217476096
+18	mchr18	90720763	2312896512
+19	mchr19	61420004	2403860480
+20	mchrX	169476592	2465464320
+21	mchrY	91455967	2635071488
+22	mchrM	16299	2726559744
+23	GL456210.1	169725	2726821888
+24	GL456211.1	241735	2727084032
+25	GL456212.1	153618	2727346176
+26	GL456219.1	175968	2727608320
+27	GL456221.1	206961	2727870464
+28	GL456233.2	559103	2728132608
+29	GL456239.1	40056	2728919040
+30	GL456354.1	195993	2729181184
+31	GL456359.1	22974	2729443328
+32	GL456360.1	31704	2729705472
+33	GL456366.1	47073	2729967616
+34	GL456367.1	42057	2730229760
+35	GL456368.1	20208	2730491904
+36	GL456370.1	26764	2730754048
+37	GL456372.1	28664	2731016192
+38	GL456378.1	31602	2731278336
+39	GL456379.1	72385	2731540480
+40	GL456381.1	25871	2731802624
+41	GL456382.1	23158	2732064768
+42	GL456383.1	38659	2732326912
+43	GL456385.1	35240	2732589056
+44	GL456387.1	24685	2732851200
+45	GL456389.1	28772	2733113344
+46	GL456390.1	24668	2733375488
+47	GL456392.1	23629	2733637632
+48	GL456394.1	24323	2733899776
+49	GL456396.1	21240	2734161920
+50	JH584295.1	1976	2734424064
+51	JH584296.1	199368	2734686208
+52	JH584297.1	205776	2734948352
+53	JH584298.1	184189	2735210496
+54	JH584299.1	953012	2735472640
+55	JH584300.1	182347	2736521216
+56	JH584301.1	259875	2736783360
+57	JH584302.1	155838	2737045504
+58	JH584303.1	158099	2737307648
+59	JH584304.1	114452	2737569792
+60	MU069434.1	8412	2737831936
+61	MU069435.1	31129	2738094080
+--sjdbOverhang = 249 taken from the generated genome
+Started loading the genome: Fri Nov 26 09:11:19 2021
+
+Genome: size given as a parameter = 2880479907
+SA: size given as a parameter = 23070797363
+SAindex: size given as a parameter = 1
+Read from SAindex: pGe.gSAindexNbases=14  nSAi=357913940
+nGenome=2880479907;  nSAbyte=23070797363
+GstrandBit=32   SA number of indices=5592920572
+Shared memory is not used for genomes. Allocated a private copy of the genome.
+Genome file size: 2880479907 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading Genome ... done! state: good=1 eof=0 fail=0 bad=0; loaded 2880479907 bytes
+SA file size: 23070797363 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading SA ... done! state: good=1 eof=0 fail=0 bad=0; loaded 23070797363 bytes
+Loading SAindex ... done: 1565873619 bytes
+Finished loading the genome: Fri Nov 26 09:11:38 2021
+
+Processing splice junctions database sjdbN=284817,   pGe.sjdbOverhang=249 
+alignIntronMax=alignMatesGapMax=0, the max intron size will be approximately determined by (2^winBinNbits)*winAnchorDistNbins=589824
+Loaded transcript database, nTr=142375
+Loaded exon database, nEx=841952
+Created thread # 1
+Created thread # 2
+Starting to map file # 0
+mate 1:   outFiles/LS8H_R1_trimmed.fastq.gz
+Created thread # 3
+Created thread # 4
+Created thread # 5
+Created thread # 6
+Created thread # 7
+Created thread # 8
+Created thread # 9
+Created thread # 10
+Created thread # 11
+BAM sorting: 265058 mapped reads
+BAM sorting bins genomic start loci:
+1	1	25099882
+2	2	41022159
+3	3	149435186
+4	5	3200767
+5	5	115912525
+6	6	105391723
+7	7	15569896
+8	7	15569896
+9	7	15569896
+10	7	15569896
+11	7	15569896
+12	7	15569896
+13	7	15569896
+14	7	15569896
+15	7	15569896
+16	7	15569896
+17	7	15569896
+18	7	15569896
+19	7	15569897
+20	7	15569897
+21	7	15569897
+22	7	15569899
+23	7	15569899
+24	7	15569899
+25	7	15569900
+26	7	15569908
+27	7	95992713
+28	8	107942972
+29	10	4889298
+30	10	108902772
+31	12	83845544
+32	14	75942146
+33	15	37357204
+34	16	40157458
+35	16	40158480
+36	16	40158624
+37	16	40158642
+38	16	40158766
+39	16	40158853
+40	16	40158891
+41	16	40158891
+42	16	40158912
+43	16	40158912
+44	17	68444339
+45	21	293
+46	21	611
+47	21	1885
+48	21	5535
+Thread #11 end of input stream, nextChar=-1
+Completed: thread #6
+Completed: thread #1
+Completed: thread #11
+Completed: thread #3
+Completed: thread #7
+Completed: thread #2
+Completed: thread #4
+Completed: thread #5
+Completed: thread #0
+Joined thread # 1
+Joined thread # 2
+Joined thread # 3
+Joined thread # 4
+Joined thread # 5
+Joined thread # 6
+Joined thread # 7
+Completed: thread #8
+Joined thread # 8
+Completed: thread #9
+Joined thread # 9
+Completed: thread #10
+Joined thread # 10
+Joined thread # 11
+Nov 26 09:13:20 ..... started sorting BAM
+Max memory needed for sorting = 742103804
+ALL DONE!
