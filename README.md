@@ -177,7 +177,7 @@ The RSeQC package can be used to analyze any of the Dedup'ed BAM files (default 
 
 ## 7. Parsing raw data from retina cell type layers experiments
 
-Raw data files from the retina cell layers experiment of the format LIB053111_GEN00221663_S1_L001_R1.fastq.bz2 should be placed in the `inFiles/indexedReads` subdirectory of the  RetinaCellTypeLayers` folder. Data files of the form Undetermined_S0_L002_R1.fastq.bz2 should be placed in the `inFiles` subdirectory of the `RetinaCellTypeLayers' folder, and this is where the following scripts can be run. The custom i5 priming did not work well on the NovaSeq 6000, so most of our reads came back as "Undetermined". To recover our replicate-specific sequencing results, we converted the files from bz2 to gz format and then parsed them files based on the i7 index primer only:
+Raw data files from the retina cell layers experiment of the format LIB053111_GEN00221663_S1_L001_R1.fastq.bz2 should be placed in the `inFiles/indexedReads` subdirectory of the  RetinaCellTypeLayers` folder. Data files of the form Undetermined_S0_L002_R1.fastq.bz2 should be placed in the `inFiles` subdirectory of the `RetinaCellTypeLayers` folder, and this is where the following scripts can be run. The custom i5 priming did not work well on the NovaSeq 6000, so most of our reads came back as "Undetermined". To recover our replicate-specific sequencing results, we converted the files from bz2 to gz format and then parsed them files based on the i7 index primer only:
 
     python3 bzip_to_gzip.py
     python3 indexParser.py
