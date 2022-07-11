@@ -48,4 +48,4 @@ for idx, well in enumerate(wells):
 print("Current dataframe")
 print(df)
 
-df.to_csv("NJS145_retina_areas.csv")
+df.to_csv("retina_areas.csv")
