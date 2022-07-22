@@ -1,6 +1,8 @@
 # Light-Seq Data Analysis
 
-This repository contains code for analyzing Light-Seq sequencing data as presented in our [publication](TODO). Steps followed are outlined below. Steps were run either as batched jobs on the Harvard O2 server or locally on a 2018 Macbook Pro. 
+This repository contains code for analyzing Light-Seq sequencing data as presented in our [publication](TODO). Steps followed are outlined below. Steps were run either as batched jobs on the Harvard O2 server or locally on a 2018 Macbook Pro.  
+A series of Jupyter Notebooks going over the scripts in details was presented at a Light-Seq workshop and can be found here:  
+https://github.com/ninning/LS-workshop
 
 ## 1. Index separate and combined mouse and human genomes with STAR
 
