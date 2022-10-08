@@ -7,7 +7,7 @@ library("ggrepel")
 library("RColorBrewer")
 
 # Load count data 
-countData <- read.csv('./LightSeq/ReorderedLightSeq.csv', header = TRUE, sep = ",")
+countData <- read.csv('../LightSeq/ReorderedLightSeq.csv', header = TRUE, sep = ",")
 row.names(countData)<-countData[,1]
 countData<-countData[, -c(0:1)]
 
@@ -56,6 +56,8 @@ results.BP.ONL <- results.BP.ONL[order(results.BP.ONL$padj),]
 
 results.ONL.RGC <- results(DESeq.ds,  pAdjustMethod="BH", contrast=c("condition","RGC","ONL"))
 results.ONL.RGC <- results.ONL.RGC[order(results.ONL.RGC$padj),]
+
+pdf(file="Volcano_Plot_AllLayers.pdf", onefile=FALSE)
 
 ## Volcano Plots
 par(mfrow=c(1,3))
@@ -115,6 +117,7 @@ sigrowsb=which(rownames(results.RGC.BP) %in% sigb)
 text(x=results.RGC.BP$log2FoldChange[sigrows] , y=-log10(results.RGC.BP$pvalue[sigrows]), label=row.names(results.RGC.BP)[sigrows], cex=1)
 text(x=results.RGC.BP$log2FoldChange[sigrowsb] , y=-log10(results.RGC.BP$pvalue[sigrowsb]), label=row.names(results.RGC.BP)[sigrowsb], cex=1)
 
+dev.off()
 
 # Create heatmap in FIGURE
 ColorMap <- brewer.pal(11, "PiYG")
@@ -138,9 +141,9 @@ All.DGEgenes <- c(DGEgenes.ONL.RGC, DGEgenes.RGC.BP, DGEgenes.BP.ONL)
 DE_genes.RGC.BP <- as.data.frame(results.RGC.BP.sorted)
 DE_genes.BP.ONL <- as.data.frame(results.BP.ONL.sorted)
 DE_genes.ONL.RGC <- as.data.frame(results.ONL.RGC.sorted)
-write.csv(DE_genes.RGC.BP, "/RGCvsBP.csv")
-write.csv(DE_genes.BP.ONL, "/BPvsONL.csv")
-write.csv(DE_genes.ONL.RGC, "/ONLvsRGC.csv")
+write.csv(DE_genes.RGC.BP, "RGCvsBP.csv")
+write.csv(DE_genes.BP.ONL, "BPvsONL.csv")
+write.csv(DE_genes.ONL.RGC, "ONLvsRGC.csv")
 
 #DE genes that are specific to each population
 ONL.Pos <- intersect(rownames(subset(results.BP.ONL.sorted, log2FoldChange<0&padj<0.05)), rownames(subset(results.ONL.RGC.sorted, log2FoldChange<0&padj<0.05)))
@@ -152,36 +155,36 @@ RGC.Neg <- intersect(rownames(subset(results.ONL.RGC.sorted, log2FoldChange<0&pa
 BP.Pos <- intersect(rownames(subset(results.BP.ONL.sorted, log2FoldChange>0&padj<0.05)), rownames(subset(results.RGC.BP.sorted, log2FoldChange>0&padj<0.05)))
 BP.Neg <- intersect(rownames(subset(results.BP.ONL.sorted, log2FoldChange<0&padj<0.05)), rownames(subset(results.RGC.BP.sorted, log2FoldChange<0&padj<0.05)))
 
-write.csv(as.data.frame(ONL.Pos), "/ONLmarkers.csv")
-write.csv(as.data.frame(BP.Pos), "/BPmarkers.csv")
-write.csv(as.data.frame(RGC.Pos), "/RGCmarkers.csv")
+write.csv(as.data.frame(ONL.Pos), "ONLmarkers.csv")
+write.csv(as.data.frame(BP.Pos), "BPmarkers.csv")
+write.csv(as.data.frame(RGC.Pos), "RGCmarkers.csv")
 
 # Heatmap plot of top 20 differentially expressed genes for each population
 DGE_Top<-ONL.Pos[1:20]
 hm.mat_DGEgenes<-log.norm.counts[DGE_Top,]
-hm.mat_DGEgenes<-hm.mat_DGEgenes[,c("ONL_1", "ONL_2", "ONL_3", "ONL_4", "BP_1", "BP_2", "BP_3", "BP_4", "GCL_1", "GCL_2", "GCL_3", "GCL_4")]
-pdf(file="LightSeq/Top_DEGenes_ONL_Pos_Heatmap.pdf", onefile=FALSE)
+hm.mat_DGEgenes<-hm.mat_DGEgenes[,c("ONL_1", "ONL_2", "ONL_3", "ONL_4", "BP_1", "BP_2", "BP_3", "BP_4", "RGC_1", "RGC_2", "RGC_3", "RGC_4")]
+pdf(file="Top_DEGenes_ONL_Pos_Heatmap.pdf", onefile=FALSE)
 pheatmap(hm.mat_DGEgenes, cluster_rows=F, cluster_cols=F, scale="row", col = ColorMap)
 dev.off()
 
 DGE_Top<-BP.Pos[1:20]
 hm.mat_DGEgenes<-log.norm.counts[DGE_Top,]
-hm.mat_DGEgenes<-hm.mat_DGEgenes[,c("ONL_1", "ONL_2", "ONL_3", "ONL_4", "BP_1", "BP_2", "BP_3", "BP_4", "GCL_1", "GCL_2", "GCL_3", "GCL_4")]
-pdf(file="LightSeq/Top_DEGenes_BP_Pos_Heatmap.pdf", onefile=FALSE)
+hm.mat_DGEgenes<-hm.mat_DGEgenes[,c("ONL_1", "ONL_2", "ONL_3", "ONL_4", "BP_1", "BP_2", "BP_3", "BP_4", "RGC_1", "RGC_2", "RGC_3", "RGC_4")]
+pdf(file="Top_DEGenes_BP_Pos_Heatmap.pdf", onefile=FALSE)
 pheatmap(hm.mat_DGEgenes, cluster_rows=F, cluster_cols=F, scale="row", col = ColorMap)
 dev.off()
 
 DGE_Top<-RGC.Pos[1:20]
 hm.mat_DGEgenes<-log.norm.counts[DGE_Top,]
-hm.mat_DGEgenes<-hm.mat_DGEgenes[,c("ONL_1", "ONL_2", "ONL_3", "ONL_4", "BP_1", "BP_2", "BP_3", "BP_4", "GCL_1", "GCL_2", "GCL_3", "GCL_4")]
-#pdf(file="./RetinaLayers/Top_DEGenes_RGC_Pos_Heatmap.pdf", onefile=FALSE)
+hm.mat_DGEgenes<-hm.mat_DGEgenes[,c("ONL_1", "ONL_2", "ONL_3", "ONL_4", "BP_1", "BP_2", "BP_3", "BP_4", "RGC_1", "RGC_2", "RGC_3", "RGC_4")]
+pdf(file="Top_DEGenes_RGC_Pos_Heatmap.pdf", onefile=FALSE)
 pheatmap(hm.mat_DGEgenes, cluster_rows=F, cluster_cols=F, scale="row", col = ColorMap)
-#dev.off()
+dev.off()
 
 # Heatmap plots of cell type markers
 DGE_Top<-c(ONL.Pos, BP.Pos, RGC.Pos)
 hm.mat_DGEgenes<-log.norm.counts[DGE_Top,]
-hm.mat_DGEgenes<-hm.mat_DGEgenes[,c("ONL_1", "ONL_2", "ONL_3", "ONL_4", "BP_1", "BP_2", "BP_3", "BP_4", "GCL_1", "GCL_2", "GCL_3", "GCL_4")]
-#pdf(file="./RetinaLayers/Top_DEGenes_AllLayers_Pos_Heatmap.pdf", onefile=FALSE)
+hm.mat_DGEgenes<-hm.mat_DGEgenes[,c("ONL_1", "ONL_2", "ONL_3", "ONL_4", "BP_1", "BP_2", "BP_3", "BP_4", "RGC_1", "RGC_2", "RGC_3", "RGC_4")]
+pdf(file="Top_DEGenes_AllLayers_Pos_Heatmap.pdf", onefile=FALSE)
 pheatmap(hm.mat_DGEgenes, cluster_rows=F, cluster_cols=F, scale="row", col = ColorMap)
-#dev.off()
+dev.off()

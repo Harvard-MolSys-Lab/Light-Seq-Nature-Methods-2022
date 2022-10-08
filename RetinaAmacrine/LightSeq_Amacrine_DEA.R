@@ -4,7 +4,7 @@ library("pheatmap")
 library("dplyr")
 
 # Import Counts
-countData <- read.csv('./RetinaAmacrine/ReorderedLightSeq.csv', header = TRUE, sep = ",")
+countData <- read.csv('../RetinaAmacrine/ReorderedLightSeq.csv', header = TRUE, sep = ",")
 head(countData)
 mydata2 = select(countData, -1)
 row.names(mydata2) <- countData$Gene
@@ -43,4 +43,4 @@ Markers=res[Pos,]
 TopMarkers=subset(Markers,log2FoldChange>3)
 
 DE_genes.TH.v.noTH <- as.data.frame(res.sorted)
-write.csv(DE_genes.TH.v.noTH, "./RetinaAmacrine/TH_Amacrine_DEGs.csv")
+write.csv(DE_genes.TH.v.noTH, "../RetinaAmacrine/TH_Amacrine_DEGs.csv")
