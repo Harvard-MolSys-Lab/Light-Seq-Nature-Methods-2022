@@ -11,8 +11,8 @@ HUMAN = sorted(glob.glob('%s*Human_Dedup.bam' % PATH_BAMFILES))
 MOUSE = sorted(glob.glob('%s*Mouse_Dedup.bam' % PATH_BAMFILES))
 
 # Remove the neg controls
-HUMAN = HUMAN[1:]
-MOUSE = MOUSE[1:]
+# HUMAN = HUMAN[1:]
+# MOUSE = MOUSE[1:]
 
 
 def parse_umis():
