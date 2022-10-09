@@ -1,5 +1,5 @@
 # Subsampling TH+ Amacrine data
-This folder contains the scripts used for subsampling analysis of the TH+ amacrine sequencing data for Extended Data Figure 6b.  
+This folder contains the scripts used for subsampling analysis of the TH+ amacrine sequencing data for Extended Data Figure 6d.  
 A single representative experimental condition was chosen for the analysis.  
 
 ### Files you need
