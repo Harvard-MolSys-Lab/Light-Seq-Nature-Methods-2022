@@ -47,7 +47,7 @@ With LSEnv active:
 
 Indexed genomes should be placed in the main directory (where this README.md document is located), so that they can be accessed by the scripts CellMixing and RetinaCellTypeLayers subfolder. If they are located elsewhere, you will need to update the scripts to call the correct locations. GFF3 annotation files should also be placed here.
 
-Scripts for the cell mixing experiment are under the CellMixing subfolder, and scripts for the retina tissue experiment are under the RetinaTissue subfolder. [Raw sequencing data](TODO) should be added into the inFiles subdirectory of the appropriate experiment. Scripts are written to have input fastq.gz files in the `inFiles` subdirectory and write output data to the `outFiles` subdirectory. You should start with an empty `outFiles` subdirectory, into which several output files for the experiment will be written. Next, the experiment-specific UMI extraction, genome mapping, transcript mapping, and analysis scripts can be run. 
+Scripts for the cell mixing experiment are under the CellMixing subfolder, and scripts for the retina tissue experiment are under the RetinaTissue subfolder. [Raw sequencing data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE208650) should be added into the inFiles subdirectory of the appropriate experiment. Scripts are written to have input fastq.gz files in the `inFiles` subdirectory and write output data to the `outFiles` subdirectory. You should start with an empty `outFiles` subdirectory, into which several output files for the experiment will be written. Next, the experiment-specific UMI extraction, genome mapping, transcript mapping, and analysis scripts can be run. 
 
 ## 4. Map and analyze cell mixing experiment
 
